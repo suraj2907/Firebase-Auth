@@ -11,7 +11,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 //firebase
-import firebase from "firebase/app";
+import firebase from "firebase/compat/app";
 import "firebase/auth";
 
 //components
@@ -22,14 +22,16 @@ import PageNotFound from "./pages/PageNotFound";
 import { UserContext } from "./context/UserContext";
 import Footer from "./layout/Footer";
 import Header from "./layout/Header";
+import FirebaseConfig from "./config/FirebaseConfig";
 
+firebase.initializeApp(FirebaseConfig);
 const App = () => {
   const [user, setUser] = useState(null);
 
   return (
     <Router>
       <ToastContainer />
-      <UserContext.Provider value={{ user }}>
+      <UserContext.Provider value={{ user , setUser }}>
         <Header />
         <Routes>
           <Route exact path="/" element={<Home />} />

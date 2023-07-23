@@ -27,25 +27,34 @@ const Header = () => {
           Github App{" "}
         </Link>
       </NavbarBrand>
-      <NavbarText>{context.user?.email ? context.user.email : ""}</NavbarText>
+      <NavbarText>
+        {context.user?.email ? (
+          <div className="text-white ">{context.user.email}</div>
+        ) : (
+          ""
+        )}
+      </NavbarText>
       <NavbarToggler onClick={toggler} />
       <Collapse isOpen={toggle} navbar className="ms-2">
         <Nav className="ms-auto" justified>
           {context.user ? (
             <NavItem>
-              <NavLink tag={Link} to="/" className="text-white">
+              <NavLink
+                onClick={() => context.setUser(null)}
+                className="text-white"
+              >
                 logout
               </NavLink>
             </NavItem>
           ) : (
             <>
               <NavItem>
-                <NavLink tag={Link} to="/" className="text-white">
+                <NavLink tag={Link} to="/signup" className="text-white">
                   Signup
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} to="/" className="text-white">
+                <NavLink tag={Link} to="/signin" className="text-white">
                   Signin
                 </NavLink>
               </NavItem>
