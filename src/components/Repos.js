@@ -16,13 +16,13 @@ const Repos = ({ repos_url }) => {
 
   return (
     <ListGroup>
-      {repos.map((repo) => {
+      {repos.map(repo => (
         <ListGroupItem key={repo.id}>
           <div className="primary">{repo.name}</div>
           <div className="secondary">{repo.language}</div>
           <div className="info">{repo.description}</div>
-        </ListGroupItem>;
-      })}
+        </ListGroupItem>
+      ))}
     </ListGroup>
   );
 };
