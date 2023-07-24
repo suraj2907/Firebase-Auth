@@ -15,8 +15,8 @@ const Repos = ({ repos_url }) => {
   }, [repos_url]);
 
   return (
-    <ListGroup>
-      {repos.map(repo => (
+    <ListGroup style={{ marginBottom: "100px" }}>
+      {repos.map((repo) => (
         <ListGroupItem key={repo.id}>
           <div className="primary">{repo.name}</div>
           <div className="secondary">{repo.language}</div>

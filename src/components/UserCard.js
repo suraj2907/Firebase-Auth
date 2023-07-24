@@ -8,7 +8,8 @@ const UserCard = ({ user }) => {
       <img
         src={user.avatar_url}
         className="thumbnail"
-        style={{ width: "520px", height: "350px" }}
+        alt="User_image"
+        // style={{ width: "520px", height: "350px" }}
       />
       <CardBody className="bg-info">
         <div className="primary">{user.name}</div>

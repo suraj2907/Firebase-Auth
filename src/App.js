@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 //react-router-dom
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 //toast
 import { ToastContainer } from "react-toastify";
@@ -20,7 +19,7 @@ import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import PageNotFound from "./pages/PageNotFound";
 import { UserContext } from "./context/UserContext";
-import Footer from "./layout/Footer";
+// import Footer from "./layout/Footer";
 import Header from "./layout/Header";
 import FirebaseConfig from "./config/FirebaseConfig";
 
@@ -39,7 +38,7 @@ const App = () => {
           <Route exact path="/Signup" element={<Signup />} />
           <Route exact path="*" element={<PageNotFound />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </UserContext.Provider>
     </Router>
   );
